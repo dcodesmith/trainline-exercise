@@ -7,13 +7,13 @@ import CallingPoint from '../CallingPoint';
 class Board extends Component {
   constructor() {
     super();
-    
+
     this.state = {
 			data: { callingPoints: [] },
 			meta: {}
     };
 	}
-	
+
 	componentDidMount() {
 		const options = queryString.parse(window.location.search);
 

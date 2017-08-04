@@ -51,7 +51,7 @@ describe('Given a CallingPoints Component', () => {
 
 				it('should have the class `origin`', () => {
 			callingPointEl = component.find('.calling-points__item');
-						
+
 						expect(callingPointEl.hasClass('origin')).to.be.true;
 						expect(callingPointEl.hasClass('destination')).to.be.false;
 				});
@@ -69,7 +69,7 @@ describe('Given a CallingPoints Component', () => {
 
 				it('should have the class `destination`', () => {
 			callingPointEl = component.find('.calling-points__item');
-						
+
 						expect(callingPointEl.hasClass('destination')).to.be.true;
 						expect(callingPointEl.hasClass('origin')).to.be.false;
 				});
@@ -87,7 +87,7 @@ describe('Given a CallingPoints Component', () => {
 
 				it('should have the class `selected`',() => {
 			callingPointEl = component.find('.calling-points__item');
-						
+
 						expect(callingPointEl.hasClass('selected')).to.be.true;
 				});
 		});
@@ -104,14 +104,14 @@ describe('Given a CallingPoints Component', () => {
 
 				it('should have the class `train`',() => {
 			callingPointEl = component.find('.calling-points__item');
-						
+
 						expect(callingPointEl.hasClass('train')).to.be.true;
 				});
 		});
 
 		describe('and there is an estimated time', () => {
 			let expectedText;
-			const estimatedAt = { estimatedAt: '10:00' };                
+			const estimatedAt = { estimatedAt: '10:00' };
 
 			afterEach(() => {
 				testProps = {};
@@ -122,10 +122,10 @@ describe('Given a CallingPoints Component', () => {
 					testProps = setProps({ hasDeparted: true, ...estimatedAt });
 					component.setProps(testProps);
 					callingPointEl = component.find('.calling-points__item');
-					expectedText = callingPointEl.find('.calling-points__estimatedat').text().trim();     
+					expectedText = callingPointEl.find('.calling-points__estimatedat').text().trim();
 				});
 
-				it('should contain the text `Dept. 10:00`',() => {              
+				it('should contain the text `Dept. 10:00`',() => {
 					expect(expectedText).to.equal('Dept. 10:00');
 				});
 			});
@@ -138,7 +138,7 @@ describe('Given a CallingPoints Component', () => {
 					expectedText = callingPointEl.find('.calling-points__estimatedat').text().trim();
 				});
 
-				it('should contain the text `Exp. 10:00`',() => {                    
+				it('should contain the text `Exp. 10:00`',() => {
 					expect(expectedText).to.equal('Exp. 10:00');
 				});
 			});

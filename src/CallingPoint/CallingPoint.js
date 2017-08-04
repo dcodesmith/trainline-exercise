@@ -20,7 +20,7 @@ const CallingPoint = (props) => {
 		if (estimatedAt === 'On time') {
 			return estimatedAt;
 		}
-		
+
 		if (hasDeparted) {
 			return `Dept. ${ estimatedAt }`
 		}
