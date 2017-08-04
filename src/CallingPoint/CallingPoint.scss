@@ -1,6 +1,6 @@
 .calling-points {
 	padding: 0;
-	
+
 	&__item {
 		color: #777;
 		display: table;
@@ -13,17 +13,17 @@
 		display: table-cell;
 		font-size: 1.15em;
 		font-weight: 600;
-	
+
 		@extend .emphasis;
 	}
 
 	&__station {
 		display: block;
-		font-weight: 600;		
+		font-weight: 600;
 
-		@extend .emphasis;		
+		@extend .emphasis;
 	}
-	
+
 	&__estimatedat {
 		font-size: 0.9em;
 	}
@@ -91,8 +91,4 @@
 			font-weight: bolder;
 			color: #000;
 		}
-}
-
-.circle {
-	
 }
