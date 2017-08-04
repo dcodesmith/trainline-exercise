@@ -1,11 +1,17 @@
 .board {
   &__header {
-    color: #000;
-    font-size: 1.2em;
-    font-weight: 600;
-
     .to {
       color: #AAA;
     }
+  }
+  &__origindestination {
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  &__operator {
+    color: #777;
+    font-weight: 600;
   }
 }
