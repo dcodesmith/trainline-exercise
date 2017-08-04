@@ -5,7 +5,7 @@
  - Run tests `npm t`
  - Start application `npm start`
  - I implemented a single endpoint API that serves the client side the JSON file. This starts up when the application starts (It is written with native node modules. Thought it'll be fun to not use express, hapi or koa)
-
+ - To mimic network latency, Do ... http://localhost:3000?latency=3000. Increase or decrease the latency query string value.
 
 JavaScript Front-end Developer Test - Contractor
 
