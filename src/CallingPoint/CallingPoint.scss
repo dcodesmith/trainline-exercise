@@ -1,0 +1,98 @@
+.calling-points {
+	padding: 0;
+	
+	&__item {
+		color: #777;
+		display: table;
+		height: 65px;
+		border-collapse: separate;
+		border-spacing: 20px 0;
+	}
+
+	&__time {
+		display: table-cell;
+		font-size: 1.15em;
+		font-weight: 600;
+	
+		@extend .emphasis;
+	}
+
+	&__station {
+		display: block;
+		font-weight: 600;		
+
+		@extend .emphasis;		
+	}
+	
+	&__estimatedat {
+		font-size: 0.9em;
+	}
+
+	&__description {
+		display: table-cell;
+		vertical-align: top;
+	}
+}
+
+.divider {
+	display: table-cell;
+	background: #777;
+	width: 1px;
+	margin: 0 10px;
+	position: relative;
+
+	&:before {
+		content: '';
+		height: 10px;
+		width: 10px;
+		border-radius: 50%;
+		position: absolute;
+		background: #fff;
+		left: -6px;
+		border: solid 1px #777;
+
+		.origin &,
+		.destination & {
+			background: #000;
+			height: 15px;
+			width: 15px;
+			left: -8px;
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: -6px;
+
+		.train & {
+			background: green;
+			height: 15px;
+			width: 15px;
+			left: -8px;
+			border-radius: 4px;
+    	top: 23px;
+		}
+	}
+
+	.origin & {
+		color: red;
+	}
+
+	.destination & {
+		background: transparent;
+	}
+}
+
+.emphasis {
+		.destination &,
+		.expected &,
+		.selected & {
+			font-weight: bolder;
+			color: #000;
+		}
+}
+
+.circle {
+	
+}

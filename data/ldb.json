@@ -1,0 +1,236 @@
+{
+  "data": {
+    "checkedAt": "10:56",
+    "callingPoints": [
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Sevenoaks",
+        "scheduledAt": "10:00",
+        "estimatedAt": "On time",
+        "isOrigin": true,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Bat & Ball",
+        "scheduledAt": "10:03",
+        "estimatedAt": "On time",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Otford",
+        "scheduledAt": "10:07",
+        "estimatedAt": "10:10",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Shoreham (Kent)",
+        "scheduledAt": "10:10",
+        "estimatedAt": "10:14",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Eynsford",
+        "scheduledAt": "10:13",
+        "estimatedAt": "10:18",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Swanley",
+        "scheduledAt": "10:18",
+        "estimatedAt": "10:23",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "St Mary Cray",
+        "scheduledAt": "10:22",
+        "estimatedAt": "10:27",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Bickley",
+        "scheduledAt": "10:27",
+        "estimatedAt": "10:37",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Bromley South",
+        "scheduledAt": "10:30",
+        "estimatedAt": "10:39",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Shortlands",
+        "scheduledAt": "10:32",
+        "estimatedAt": "10:42",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Ravensbourne",
+        "scheduledAt": "10:35",
+        "estimatedAt": "10:45",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Beckenham Hill",
+        "scheduledAt": "10:37",
+        "estimatedAt": "10:47",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Bellingham",
+        "scheduledAt": "10:39",
+        "estimatedAt": "10:49",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": false,
+        "station": "Catford",
+        "scheduledAt": "10:42",
+        "estimatedAt": "10:52",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": true,
+        "isTrainHere": true,
+        "station": "Crofton Park",
+        "scheduledAt": "10:44",
+        "estimatedAt": "10:55",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "Nunhead",
+        "scheduledAt": "10:47",
+        "estimatedAt": "10:57",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "Peckham Rye",
+        "scheduledAt": "10:50",
+        "estimatedAt": "11:00",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "Denmark Hill",
+        "scheduledAt": "10:54",
+        "estimatedAt": "11:03",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "Elephant & Castle",
+        "scheduledAt": "11:00",
+        "estimatedAt": "11:09",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "London Blackfriars",
+        "scheduledAt": "11:04",
+        "estimatedAt": "11:13",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "City Thameslink",
+        "scheduledAt": "11:06",
+        "estimatedAt": "11:15",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "isSelected": true,
+        "station": "Farringdon Underground",
+        "estimatedAt": "11:18",
+        "scheduledAt": "11:10",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "London St Pancras (Intl)",
+        "scheduledAt": "11:14",
+        "estimatedAt": "11:21",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "Kentish Town",
+        "scheduledAt": "11:18",
+        "estimatedAt": "11:25",
+        "isOrigin": false,
+        "isDestination": false
+      },
+      {
+        "hasDeparted": false,
+        "isTrainHere": false,
+        "station": "West Hampstead Thameslink",
+        "scheduledAt": "11:23",
+        "estimatedAt": "11:29",
+        "isOrigin": false,
+        "isDestination": true
+      }
+    ],
+    "scheduledAt": "11:10",
+    "operator": "Thameslink"
+  },
+  "meta": {}
+}
