@@ -58,7 +58,7 @@ describe('Given a Board Component', () => {
 	describe('When rendered', () => {
 		beforeEach(() => {
       component = shallow(<Board />, { lifecycleExperimental: true });
-			boardEl = component.find('div');
+			boardEl = component.find('.board');
 		});
 
 		it('should render the component', () => {
@@ -66,8 +66,9 @@ describe('Given a Board Component', () => {
     });
 
     describe('and not data has been fetch', () => {
-      it('should render no CallingPoint components', () => {
-        expect(component.find(CallingPoint).length).to.equal(0);
+      it('should display a nice calming reasurring message', () => {
+        expect(boardEl.find('span').text().trim())
+          .to.equal('We are making sure we get you the right information. Bear with us ;)');
       });
     });
 

@@ -35,12 +35,20 @@ class Board extends Component {
 		);
 	}
 
+	getLoadingMessage() {
+		return (
+			<span> We are making sure we get you the right information. Bear with us ;) </span>
+		);
+	}
+
   render() {
+		const loadingMessage = this.getLoadingMessage();
 		const callingPoints = this.renderCallingPoints();
+		const isFetching = this.state.data.callingPoints.length;
 
     return (
-			<div>
-				{ callingPoints }
+			<div className="board">
+				{ !isFetching ? loadingMessage : callingPoints }
 			</div>
     );
   }
