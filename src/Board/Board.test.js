@@ -81,9 +81,9 @@ describe('Given a Board Component', () => {
       it('should display a header with appriopriate information', () => {
         const expectedProps = Object.assign({}, stateData);
         const { data: { callingPoints } } = expectedProps;
-        const expectedHeader = `${callingPoints[0].station} to ${callingPoints[3].station}`;
+        const expectedHeader = `${callingPoints[0].station} to ${callingPoints[3].station} Operated by ${expectedProps.data.operator}`;
 
-        expect(component.find('.board__header').text()).to.equal(expectedHeader);
+        expect(component.find('.board__header').text().trim()).to.equal(expectedHeader);
       });
 
       it('should render 4 CallingPoint components', () => {

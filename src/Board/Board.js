@@ -50,7 +50,7 @@ class Board extends Component {
     return (
       <header className="board__header">
         <div className="board__origindestination"> { origin } <span className="to">to</span> { destination } </div>
-        <div className="board__operator"> Operated by { this.state.data.operator } </div>
+        <div className="board__operator">Operated by { this.state.data.operator }</div>
       </header>
     );
   }
