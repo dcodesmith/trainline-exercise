@@ -18,7 +18,7 @@ Using the provided boilerplate and the data in `data/ldb.json`, create an applic
 
 **Nice to have:**
  - ~~Network latency simulation (async code)~~
- - Responsive layout
+ - ~~Responsive layout~~
  - ~~CSS-only solution (no images)~~
 
 **We will pay attention to:**
