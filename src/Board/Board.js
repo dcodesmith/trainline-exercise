@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import fetch from 'isomorphic-fetch';
+import axios from 'axios';
+import queryString from 'query-string';
 
 import CallingPoint from '../CallingPoint';
 
@@ -13,10 +14,11 @@ class Board extends Component {
     };
 	}
 	
-	componentDidMount() {		
-		fetch('http://localhost:3001/ldb.json')
-			.then((res) => res.json())
-			.then(({ data, meta }) => {
+	componentDidMount() {
+		const options = queryString.parse(window.location.search);
+
+		axios.get('http://localhost:3001/ldb.json', { params: options })
+			.then(({ data: { data, meta } }) => {
 				this.setState({ data, meta })
 			});
 	}
