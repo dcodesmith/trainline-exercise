@@ -1,4 +1,12 @@
 # FE-exercise-contractor
+
+**Instructions**
+ - Install all node modules `npm i`
+ - Run tests `npm t`
+ - Start application `npm start`
+ - I implemented a single endpoint API that serves the client side the JSON file. This starts up when the application starts (It is written with native node modules. Thought it'll be fun to not use express, hapi or koa)
+
+
 JavaScript Front-end Developer Test - Contractor
 
 Using the provided boilerplate and the data in `data/ldb.json`, create an application that displays the train service from Farringdon to West Hampstead Thameslink as shown in the following mockup:
@@ -6,12 +14,12 @@ Using the provided boilerplate and the data in `data/ldb.json`, create an applic
 ![mockup](Farringdon_to_West_Hampstead_Thameslink___Live_Departures___Arrivals.png)
 
 **Requirements:**
- - Unit tests
+ - ~~Unit tests~~
 
 **Nice to have:**
- - Network latency simulation (async code)
+ - ~~Network latency simulation (async code)~~
  - Responsive layout
- - CSS-only solution (no images)
+ - ~~CSS-only solution (no images)~~
 
 **We will pay attention to:**
  - Code quality and consistency
