@@ -3,29 +3,39 @@ const fs = require('fs');
 const path = require('path');
 const { parse } = require('url');
 
+const HTTPStatusCodes = {
+	OK: 200,
+	INTERNAL_SERVER_ERROR: 500,
+	NOT_FOUND: 404
+};
+
 const app = http.createServer((request, response) => {
 	const url = parse(request.url, true);
 	const { query: { latency } } = url;
 	const filePath = path.join(__dirname, 'data', url.pathname);
 
-	fs.readFile(filePath, 'utf8', (err, content) => {
-		if (err) {        
-			response.writeHead(500, { 'Content-Type': 'text/plain' });
-			response.write(err);
-			response.end();
-			return;
-		}
+  fs.exists(filePath, (exists) => {
+    if (!exists) {
+      response.writeHead(HTTPStatusCodes.NOT_FOUND, { 'Content-Type': 'text/plain' });
+      response.end('404 Not Found');
+      return;
+    }
 
-		response.writeHead('200', {
-			'Content-Type': 'text/json',
-			'Access-Control-Allow-Origin': '*',
-			'X-Powered-By':'trainline'
+		fs.readFile(filePath, 'utf8', (err, content) => {
+			if (err) {
+				response.writeHead(HTTPStatusCodes.INTERNAL_SERVER_ERROR, { 'Content-Type': 'text/plain' });
+				response.end(err);
+				return;
+			}
+
+			response.writeHead(HTTPStatusCodes.OK, {
+				'Content-Type': 'text/json',
+				'Access-Control-Allow-Origin': '*',
+				'X-Powered-By':'trainline'
+			});
+
+			setTimeout((() => response.end(content)), latency);
 		});
-
-		setTimeout((() => {
-			response.write(content);
-		  response.end();
-		}), latency);
 	});
 });
 
