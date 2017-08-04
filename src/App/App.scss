@@ -1,1 +1,41 @@
-.App {}
+$xx-small: 320px;
+$x-small: 360px;
+$small: 480px;
+$tablet: 768px;
+$medium: 992px;
+$large: 1200px;
+
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+.App {
+  width: 26%;
+  margin: 0 auto;
+
+  @include respond-to($xx-small) {
+    width: 75%;
+  }
+
+  @include respond-to($x-small) {
+    width: 65%;
+  }
+
+  @include respond-to($small) {
+    width: 50%;
+  }
+
+  @include respond-to($tablet) {
+    width: 35%;
+  }
+
+  @include respond-to($medium) {
+    width: 37%;
+  }
+
+  @include respond-to($large) {
+    width: 30%;
+  }
+}

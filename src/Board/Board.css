@@ -1,5 +1,7 @@
-.board__header .to {
-  color: #AAA; }
+.board__header {
+  margin-left: 22px; }
+  .board__header .to {
+    color: #AAA; }
 
 .board__origindestination {
   color: #000;
