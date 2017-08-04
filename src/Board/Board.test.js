@@ -52,7 +52,7 @@ let stateData = {
   'meta': {}
 };
 
-describe.only('Given a Board Component', () => {
+describe('Given a Board Component', () => {
 	let component, boardEl;
 
 	describe('When rendered', () => {
