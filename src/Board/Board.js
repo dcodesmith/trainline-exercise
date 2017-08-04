@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import queryString from 'query-string';
 
+import './Board.css';
+
 import CallingPoint from '../CallingPoint';
 
 class Board extends Component {
@@ -41,14 +43,36 @@ class Board extends Component {
 		);
 	}
 
-  render() {
-		const loadingMessage = this.getLoadingMessage();
-		const callingPoints = this.renderCallingPoints();
-		const isFetching = this.state.data.callingPoints.length;
+  getHeader() {
+    const { station: destination } = this.filterByKey('isDestination');
+    const { station: origin } = this.filterByKey('isOrigin');
 
     return (
-			<div className="board">
-				{ !isFetching ? loadingMessage : callingPoints }
+      <header className="board__header">
+        { origin } <span className="to">to</span> { destination }
+      </header>
+    );
+  }
+
+  filterByKey(key) {
+    const { data: { callingPoints } } = this.state;
+
+    return callingPoints.length && callingPoints.filter((item) => {
+      return !!item[key];
+    })[0];
+  }
+
+  render() {
+		const loadingMessage = this.getLoadingMessage();
+    const callingPointsEls = this.renderCallingPoints();
+    const headerEl = this.getHeader();
+    const { data: { callingPoints } } = this.state;
+    const isFetching = !callingPoints.length;
+
+    return (
+      <div className="board">
+        { !isFetching && headerEl }
+				{ isFetching ? loadingMessage : callingPointsEls }
 			</div>
     );
   }
