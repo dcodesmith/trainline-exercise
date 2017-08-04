@@ -20,7 +20,7 @@ class Board extends Component {
 		axios.get('http://localhost:3001/ldb.json', { params: options })
 			.then(({ data: { data, meta } }) => {
 				this.setState({ data, meta })
-			});
+			}).catch((err) => {});
 	}
 
 	renderCallingPoints() {
