@@ -3,11 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const { parse } = require('url');
 
-const filePath = path.join(__dirname, 'data', 'ldb.json');
-
 const app = http.createServer((request, response) => {
 	const url = parse(request.url, true);
 	const { query: { latency } } = url;
+	const filePath = path.join(__dirname, 'data', url.pathname);
 
 	fs.readFile(filePath, 'utf8', (err, content) => {
 		if (err) {        
