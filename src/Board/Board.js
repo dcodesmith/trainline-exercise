@@ -6,7 +6,7 @@ import Api from '../common/Api.js';
 import './Board.css';
 
 import LoadingMessage from '../LoadingMessage';
-import Itinerary from '../Itinerary.js';
+import Itinerary from '../Itinerary';
 
 class Board extends Component {
   constructor() {
@@ -23,22 +23,16 @@ class Board extends Component {
 
     Api
       .get({ params: options })
-      .then(({ data: { data }}) => this.setState({ data }));
+      .then(({ data }) => this.setState(data));
 	}
 
   render() {
     const { data } = this.state;
     const isFetching = !data.callingPoints.length;
 
-    if (isFetching) {
-      console.log('fetching....', data);
-    } else {
-      console.log('Done fetching!', data);
-    }
-
     return (
       <div className="board">
-				 { isFetching ? <LoadingMessage /> : <Itinerary data={ data } /> }
+				{ isFetching ? <LoadingMessage /> : <Itinerary { ...data } /> }
 			</div>
     );
   }

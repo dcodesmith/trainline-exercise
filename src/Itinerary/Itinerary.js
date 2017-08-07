@@ -2,12 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { find } from 'lodash';
 
-import Header from './Header';
-import CallingPoint from './CallingPoint';
+import Header from '../Header';
+import CallingPoint from '../CallingPoint';
 
-const Itinerary = ({ callingPoints = [], operator = '' }) => {
-  console.log('Afees', callingPoints, operator);
-
+const Itinerary = ({ callingPoints, operator }) => {
   const { station: destination } = find(callingPoints, 'isDestination');
   const { station: origin } = find(callingPoints, 'isOrigin');
 
