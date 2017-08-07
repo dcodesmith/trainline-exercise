@@ -11,8 +11,8 @@ const HTTPStatusCodes = {
 
 const app = http.createServer((request, response) => {
 	const url = parse(request.url, true);
-	const { query: { latency } } = url;
-	const filePath = path.join(__dirname, 'data', url.pathname);
+	const { pathname, query: { latency } } = url;
+	const filePath = path.join(__dirname, 'data', pathname);
 
   fs.exists(filePath, (exists) => {
     if (!exists) {

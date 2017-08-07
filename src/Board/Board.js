@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import queryString from 'query-string';
+import createFragment from 'react-addons-create-fragment';
 
 import './Board.css';
 
+import Header from '../Header';
 import CallingPoint from '../CallingPoint';
+import LoadingMessage from '../LoadingMessage';
 
 class Board extends Component {
   constructor() {
@@ -30,29 +33,23 @@ class Board extends Component {
 
 		const callPointsList = callingPoints.map((props, index) => <CallingPoint { ...props } key={index} />);
 
-		return (
+    return (
 			<ul className="calling-points">
 				{ callPointsList }
 			</ul>
 		);
 	}
 
-	getLoadingMessage() {
-		return (
-			<span> We are making sure we get you the right information. Bear with us ;) </span>
-		);
-	}
-
-  getHeader() {
+  renderHeader() {
     const { station: destination } = this.filterByKey('isDestination');
     const { station: origin } = this.filterByKey('isOrigin');
+    const { operator } = this.state.data;
 
+    // if (origin && destination && operator) {
     return (
-      <header className="board__header">
-        <div className="board__origindestination"> { origin } <span className="to">to</span> { destination } </div>
-        <div className="board__operator">Operated by { this.state.data.operator }</div>
-      </header>
+      <Header origin={ origin } destination={ destination } operator={ operator } />
     );
+    // }
   }
 
   filterByKey(key) {
@@ -64,21 +61,30 @@ class Board extends Component {
   }
 
   render() {
-		const loadingMessage = this.getLoadingMessage();
-    const callingPointsEls = this.renderCallingPoints();
-    const headerEl = this.getHeader();
     const { data: { callingPoints } } = this.state;
     const isFetching = !callingPoints.length;
 
+    // const headerEl = this.renderHeader();
+    // const callingPointsEls = this.renderCallingPoints();
+    let content = <LoadingMessage />;
+
+    if (!isFetching) {
+      console.log(this.renderHeader());
+      content = createFragment({
+        header: this.renderHeader()
+        // callingPoints: this.renderCallingPoints()
+      });
+    }
+
     return (
       <div className="board">
-        { !isFetching && headerEl }
-				{ isFetching ? loadingMessage : callingPointsEls }
+        {/* { !isFetching && this.renderHeader() }
+				{ isFetching ? <LoadingMessage /> : this.renderCallingPoints() } */}
+        { content }
 			</div>
     );
   }
 }
-
 
 Board.displayName = 'Board';
 
