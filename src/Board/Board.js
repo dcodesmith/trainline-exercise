@@ -23,7 +23,12 @@ class Board extends Component {
 
     Api
       .get({ params: options })
-      .then(({ data }) => this.setState(data));
+      .then(({ data }) => {
+        this.setState(data, function() {
+          console.log('data', this.state);
+        });
+      })
+      .catch((err) =>  console.log('err', err));
 	}
 
   render() {
