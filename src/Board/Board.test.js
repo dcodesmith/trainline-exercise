@@ -1,10 +1,13 @@
 import React from 'react';
 import chai, { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import sinon from 'sinon';
 
 import Board from './Board.js';
 import LoadingMessage from '../LoadingMessage';
 import Itinerary from '../Itinerary';
+
+import Api from '../common/Api.js';
 
 let stateData = {
   'data': {
@@ -53,12 +56,12 @@ let stateData = {
   'meta': {}
 };
 
-describe.skip('Given a Board Component', () => {
-	let component, boardEl;
-
+describe.only('Given a Board Component', () => {
 	describe('When rendered', () => {
+    let component, boardEl;
+    
 		beforeEach(() => {
-      component = shallow(<Board />, { lifecycleExperimental: true });
+      component = mount(<Board />);
 			boardEl = component.find('.board');
 		});
 
@@ -66,7 +69,7 @@ describe.skip('Given a Board Component', () => {
       expect(boardEl.length).to.equal(1);
     });
 
-    describe.skip('and not data has been fetched', () => {
+    describe('and not data has been fetched', () => {
       it('should render the LoadingMessage component', () => {
         expect(boardEl.find(LoadingMessage).length).to.equal(1)
       });
@@ -74,12 +77,15 @@ describe.skip('Given a Board Component', () => {
 
     describe('and data has been fetched', () => {
       beforeEach(() => {
-        const { data, meta } = stateData;
-        component.setState(data);
+        console.log('inna hia 0');
+        const { data } = stateData;
+        const ApiGetStub = sinon.stub(Api, 'get');
+        ApiGetStub.withArgs({ params: 'options' }).resolves(stateData);
+        console.log('inna hia 1');        
       });
 
       it('should render a Itinerary component', () => {
-        console.log(boardEl.debug());
+  			boardEl = component.find('.board');
         expect(boardEl.find(Itinerary).length).to.equal(1);
       });
     });

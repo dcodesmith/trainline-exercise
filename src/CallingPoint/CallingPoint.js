@@ -16,7 +16,7 @@ const CallingPoint = (props) => {
 		isDestination
 	} = props;
 
-	const getEstimateTime = () => {
+	const getEstimateTime = () => {		
 		if (estimatedAt === 'On time') {
 			return estimatedAt;
 		}
