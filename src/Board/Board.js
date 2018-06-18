@@ -21,15 +21,12 @@ class Board extends Component {
 	componentDidMount() {
     const options = queryString.parse(window.location.search);
 
-    console.log('Hey', options);
-    
     Api
       .get({ params: options })
       .then(({ data }) => {
-        console.log('asdasdasda');
         this.setState(data);
       })
-      .catch((err) =>  console.log('err', err));
+      .catch((error) =>  console.log('err', error));
 	}
 
   render() {
